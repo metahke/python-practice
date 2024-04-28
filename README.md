@@ -1,2 +1,2 @@
-# python-learning
+# python-practice
 Python assignments.
