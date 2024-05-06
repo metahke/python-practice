@@ -88,7 +88,7 @@ def task6():
     print(sum(a))  # Wyświetli sumę wszystkich liczb znajdujących się na liście.
 
     # j) False
-    print(8 in a)  # Sprawdzi, czy liczba 8.py znajduje się na liście.
+    print(8 in a)  # Sprawdzi, czy liczba 8 znajduje się na liście.
 
     # k) True
     print(4 not in a)  # Sprawdzi, czy liczba 4 nie znajduje się na liście.
