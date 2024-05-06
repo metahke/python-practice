@@ -12,7 +12,6 @@ def task13():
         print("\n".join(menu_options))
 
     def program():
-        menu()
         user_choice = input("> ")
 
         print("")
@@ -48,11 +47,6 @@ def task13():
                 print("--- Nieprawidłowy wybór! ---")
         print("")
 
-        # Zakładam, że to zapętlenie może być problemem, np. przy setnym prawidłowym wykonaniu -
-        # pierwsza odpalona funkcja "program" nadal będzie wówczas aktywna.
-        # Ponoć lepiej jest wrzucić to do "while True:",
-        # która będzie się wykonywała, aż do wybrania przez użytkownika wartości "4" (quit()).
-        # A może jest jeszcze jakieś inne podejście?
+    while True:
+        menu()
         program()
-
-    program()
