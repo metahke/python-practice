@@ -88,7 +88,7 @@ def task6():
     print(sum(a))  # Wyświetli sumę wszystkich liczb znajdujących się na liście.
 
     # j) False
-    print(8 in a)  # Sprawdzi, czy liczba 8 znajduje się na liście.
+    print(8 in a)  # Sprawdzi, czy liczba 8.py znajduje się na liście.
 
     # k) True
     print(4 not in a)  # Sprawdzi, czy liczba 4 nie znajduje się na liście.
@@ -110,12 +110,11 @@ def task8():
 
     print(f"Twoje BMI wynosi: {round(bmi, 2)}")
 
-    # Ponoć "bmi >= 18.5 and bmi <= 24" można uprościć
     if bmi < 18.5:
         print("Masz niedowagę")
-    elif bmi >= 18.5 and bmi <= 24:
+    elif 18.5 <= bmi <= 24:
         print("Twoja waga jest prawidłowa")
-    elif bmi > 24 and bmi <= 26.5:
+    elif 24 < bmi <= 26.5:
         print("Posiadasz lekką niedowagę")
     elif bmi <= 35:
         excess_weight_level = 1

@@ -130,3 +130,8 @@ def task4():
         print("Ilość elementów:", len(sets[set_name]))
         print("Zawarte elementy:", sets[set_name])
         print("")
+
+    if len(B - A) == 0:
+        print("Zbiór B zawiera się w zbiorze A")
+    else:
+        print("Zbiór B nie zawiera się w zbiorze A")

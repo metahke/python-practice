@@ -51,11 +51,11 @@ def task2():
     def display_albums():
         print(albums)
 
-    def get_album_name():
+    def input_album_name():
         return input("Podaj nazwę albumu: ")
 
     def search_album():
-        album = get_album_name()
+        album = input_album_name()
         albums_names = albums.keys()
 
         if album in albums_names:
@@ -64,14 +64,14 @@ def task2():
             print("--- Brak danych ---")
 
     def add_album():
-        album = get_album_name()
+        album = input_album_name()
         performer = input("Wprowadź wykonawcę: ")
         albums[album] = performer
 
         print(f"--- Album {album} dodany ---")
 
     def delete_album():
-        album = get_album_name()
+        album = input_album_name()
         albums.pop(album)
 
         print(f"--- Album {album} usunięty ---")
@@ -88,12 +88,12 @@ def task3():
     text = "Once upon a midnight dreary, while I pondered, weak and weary, Over many a quaint and curious volume of forgotten lore, While I nodded, nearly napping, suddenly there came a tapping, As of someone gently rapping, rapping at my chamber door. This visitor, I muttered, tapping at my chamber door - Only this, and nothing more."
 
     words = re.sub("[^a-zA-Z ]", "", text).split(" ")
-    words_dict = {}
+    words_occurence = {}
 
     for word in words:
-        words_dict[word] = words.count(word)
+        words_occurence[word] = words.count(word)
 
-    print(words_dict)
+    print(words_occurence)
 
 
 def task4():
@@ -167,7 +167,6 @@ def task8():
     values = list(data.values())
     unrepeatable_values = []
 
-    # Zapewne byłoby fajniej zrobić to metodą filter()
     for value in values:
         if values.count(value) == 1:
             unrepeatable_values.append(value)

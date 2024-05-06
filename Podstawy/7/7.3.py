@@ -3,19 +3,12 @@ def task1():
 
     # example_txt = "Napisz program, który wczytuje dowolne zdanie. Usuń znaki interpunkcyjne (, . : ; , ! ?)"
 
-    txt = input("Wprowadź tekst: ")
+    text = input("Wprowadź tekst: ")
 
-    almost_cleared_txt_list = re.sub("[^\w\s]", "", txt).split(" ")
-    cleared_txt_list = []
+    words = re.sub("\W", " ", text).split()
 
-    for txt in almost_cleared_txt_list:
-        if txt != '':
-            cleared_txt_list.append(txt)
-
-    cleared_txt_list.reverse()
-    reversed_txt = " ".join(cleared_txt_list)
-
-    print(reversed_txt)
+    words.reverse()
+    print(" ".join(words))
 
 
 def task2():
@@ -89,22 +82,18 @@ def task5():
     example_txt = "Napisz program pod podłogą, który wczytuje dowolne na zdanie. Usuń dla niego dla znaki interpunkcyjne (, . : ; , ! ?)"
 
     def get_text_info(text):
-        almost_cleared_txt_list = re.sub("[^\w\s]", "", text).split(" ")
-        cleared_txt_list = []
 
-        for txt in almost_cleared_txt_list:
-            if txt != '':
-                cleared_txt_list.append(txt)
+        cleared_words = re.sub("\W", " ", text).split()
 
         # A.
-        print(f"Zdanie zawiera {len(cleared_txt_list)} wyrazów.")
+        print(f"Zdanie zawiera {len(cleared_words)} wyrazów.")
 
         print("---")
 
         # B.
         has_upper_text = False
 
-        for txt in cleared_txt_list:
+        for txt in cleared_words:
             first_letter = txt[0]
 
             if first_letter.isupper():
@@ -117,41 +106,38 @@ def task5():
         print("---")
 
         # C.
-        words_list = ["i", "w", "na", "pod", "dla"]
+        words = ["i", "w", "na", "pod", "dla"]
 
-        words_dict = {
-            "i": [],
-            "w": [],
-            "na": [],
-            "pod": [],
-            "dla": [],
-        }
+        words_positions = {}
 
-        # Posłuży do sprawdzenia, czy jakiekolwiek ze słów z listy znajduje się w tekście
-        is_included_in_words_list = False
+        for word in words:
+            words_positions[word] = []
 
-        # Przejdzie przez każde ze słów tekstu i sprawdzi, czy znajduje się na liście.
-        # Jeśli tak, wówczas doda jego indeks do słownika i zmieni wartość powyższej zmiennej
-        for i in range(len(cleared_txt_list)):
-            word = cleared_txt_list[i]
+        is_included_in_words = False
 
-            if word in words_list:
-                is_included_in_words_list = True
-                words_dict[word].append(i)
+        for i in range(len(cleared_words)):
+            word = cleared_words[i]
 
-        # Jeśli któreś ze słów listy zawiera się w tekście, wówczas wylistuje jego indeksy. Jeśli żadnego nie ma,
-        # wówczas program wyda odpowiednią informację
-        if is_included_in_words_list:
-            for word in words_dict:
-                if words_dict[word]:
-                    print(f"Indeksy słowa '{word}': {words_dict[word]}.")
+            if word in words:
+                is_included_in_words = True
+                words_positions[word].append(i)
+
+        if is_included_in_words:
+            for word in words_positions:
+                if words_positions[word]:
+                    print(f"Indeksy słowa '{word}': {words_positions[word]}.")
         else:
-            print("Tekst nie zawiera słów:", words_list)
+            print("Tekst nie zawiera słów:", words)
 
         print("---")
 
-        # D. Nie uwzględni wielkości liter, ale to by wymagało znacznie większego skomplikowania (zamienić wszystkie wyrazy na zaczynające się z małych liter, ustawić w odpowiedniej kolejności, a później jakoś podmienić). Jak to zrobić inaczej?
-        cleared_txt_list.sort()
-        print(" ".join(cleared_txt_list))
+        # D.
+        cleared_words.sort()
+
+        first_word_sentece = cleared_words[0][0].upper()
+
+        reversed_sentence = first_word_sentece + " ".join(cleared_words)[1:].lower()
+
+        print(f'{reversed_sentence}.')
 
     get_text_info(example_txt)
