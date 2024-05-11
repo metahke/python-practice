@@ -130,7 +130,7 @@ def task8():
 def task9():
     print("Koniunkcja to 'and' (wszystkie założenia muszą zostać spełnione).")
     print("Alternatywa logiczna to 'or' (przynajmniej jedno założenie musi zostać spełnione).")
-    print(True and False) # False
+    print(True and False)  # False
     print(True and True)  # True
     print(False or False)  # False
     print(False or True)  # True
