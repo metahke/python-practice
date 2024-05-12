@@ -2,15 +2,23 @@ def task1():
     nums = [4, 6, 8, 24, 12, 2]
 
     def get_max_num_index(numbers):
-        max_num = max(nums)
+        max_num = max(numbers)
         max_num_index = nums.index(max_num)
 
         return max_num_index
 
     print(get_max_num_index(nums))
 
-    # :D Nie za bardzo widzę po co używać tutaj enumerate...
+    # enumerate
+    def get_max_nums_index(numbers):
+        max_num = max(numbers)
+        max_num_indexes = []
 
+        for i, num in enumerate(numbers):
+            if num == max_num:
+                max_num_indexes.append(i)
+
+        return max_num_indexes
 
 def task2():
     """
