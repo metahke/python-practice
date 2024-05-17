@@ -20,6 +20,7 @@ def task1():
 
         return max_num_indexes
 
+
 def task2():
     """
     Parametr funkcji jest tym, co zostaje zdefiniowane w nawiasach podczas tworzenia funkcji, natomiast argumentem jest to, co dodamy do nawiasów podczas wywoływania danej funkcji.
@@ -67,8 +68,9 @@ def task5():
         for i in range(len(shortest_list)):
             even_odd_nums_chain.append(shortest_list[i])
             even_odd_nums_chain.append(longest_list[i])
-
-        even_odd_nums_chain.extend(longest_list[len(shortest_list):])
+        
+        leftover = longest_list[len(shortest_list):]
+        even_odd_nums_chain.extend(leftover)
 
         print(even_odd_nums_chain)
 
@@ -83,6 +85,7 @@ def task6():
         two_digit_nums = []
 
         for num in nums_list:
+            # could also be 10 <= num <= 99 (more performant)
             if len(str(num)) == 2:
                 two_digit_nums.append(num)
 
@@ -99,8 +102,7 @@ def task7():
         return 5000 < level < 30000
 
     def insert_astronauts_num():
-        return int(
-            input("Wprowadź liczbę astronautów na pokładzie, która jest liczbą dodatnią i nie większą od 7: "))
+        return int(input("Wprowadź liczbę astronautów na pokładzie, która jest liczbą dodatnią i nie większą od 7: "))
 
     def is_astronauts_num_valid(astronauts_num):
         return 0 < astronauts_num <= 7
@@ -111,7 +113,8 @@ def task7():
             print(f'Posiadamy {fuel_level} litrów paliwa.')
 
             distance += 100
-            fuel_level -= 300 + 100 * astronauts
+            fuel_used = 300 + 100 * astronauts
+            fuel_level -= fuel_used
 
         if distance < 2000:
             print("--- Statek kosmiczny nie dotarł do orbity ---")

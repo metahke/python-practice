@@ -13,15 +13,14 @@ def task2():
 
     nums = set()
 
-    def rm_even_nums(num):
-        if num % 2 != 0:
-            return num
+    def is_odd_num(num):
+        return num % 2 != 0
 
     for i in range(15):
         num = random.randrange(5, 121)
         nums.add(num)
 
-    odd_nums = set(filter(rm_even_nums, nums))
+    odd_nums = set(filter(is_odd_num, nums))
 
     print(odd_nums)
 
@@ -51,14 +50,10 @@ def task4():
 
         city, rainfall = choice.split(" ")
 
-        if cities_rainfalls.get(city):
-            cities_rainfalls[city] += int(rainfall)
-            continue
+        cities_rainfalls[city] = cities_rainfalls.get(city, 0) + int(rainfall)
 
-        cities_rainfalls[city] = int(rainfall)
-
-    for city in cities_rainfalls:
-        print(f"{city} : {cities_rainfalls[city]}")
+    for city, rainfall in cities_rainfalls.items():
+        print(f"{city} : {rainfall}")
 
 
 def task5():
@@ -79,9 +74,7 @@ def task5():
 
     bill = {}
 
-    for bill_item in bill_items:
-
-        person, dish, price = bill_item
+    for person, dish, price in bill_items:
 
         if not bill.get(person):
             bill[person] = {}

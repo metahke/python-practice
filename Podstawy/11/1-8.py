@@ -101,7 +101,6 @@ def task4():
 
 
 def task5():
-
     values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
     figures = ["Hearts", "Spades", "Clubs", "Diamonds"]
     cards = []
@@ -114,7 +113,7 @@ def task5():
             random.shuffle(self.cards)
 
         def deal(self):
-            card = cards.pop(-1)
+            card = cards.pop()
             return f"{card.value} - {card.figure}"
 
     class Card:
@@ -247,6 +246,7 @@ def task8():
             self.end_task = case["end_task"]
 
         def retrieve_seconds(self):
+            # Można również przemienić od razu na format ISO: datetime.fromisoformat(self...)
             date_pattern = "%Y-%m-%dT%H:%M:%S+00:00"
 
             created_date = datetime.strptime(self.created_task, date_pattern)

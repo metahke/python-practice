@@ -8,9 +8,10 @@ def task1():
 
 def task2():
     def check_if_palindrome(word):
-        is_palindrome = 'jest' if word.lower() == word.lower()[::-1] else 'nie jest'
+        is_palindrome = word.lower() == word.lower()[::-1]
+        result = "jest" if is_palindrome else "nie jest"
 
-        print(f"Podany wyraz {is_palindrome} palindromem!")
+        print(f"Podany wyraz {result} palindromem!")
 
     check_if_palindrome("Janusz")
     check_if_palindrome("kajak")

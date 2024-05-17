@@ -4,9 +4,9 @@ import json
 def task1():
     # Określ, czy poniższe ścieżki do plików.txt są względne / bezwzględne:
     # - C:\przyklad.txt -> ścieżka bezwzględna
-    # - \katalog\przyklad.txt -> ścieżka względna
+    # - \katalog\przyklad.txt -> ścieżka bezwzględna
     # - C:\outer_dir\inner_dir\przyklad.txt -> ścieżka bezwzględna
-    # - \outer_dir\innedr_dir\przyklad.txt -> ścieżka względna
+    # - \outer_dir\innedr_dir\przyklad.txt -> ścieżka bezwzględna
     pass
 
 
@@ -22,13 +22,15 @@ def task2():
 
 def task3():
     with open("./przyklad.txt", "r") as file:
-
         lines = file.readlines()
 
         # Parzyste linijki będą nieparzystymi indeksami na liście
-        for i in range(len(lines)):
+        print(lines[1::2])
+        """ poprzednie rozwiązanie :| :
+        for i, line in enumerate(lines):
             if i % 2 != 0:
-                print(lines[i])
+                print(line)
+        """
 
 
 def task4():
@@ -72,7 +74,7 @@ def task7():
 
         cleared_text_lines.append(" ".join(cleared_words))
 
-    cleared_text = " \n".join(cleared_text_lines)
+    cleared_text = "\n".join(cleared_text_lines)
 
     with open("./przyklad7-cleared.txt", "w", encoding="utf-8") as file:
         file.write(cleared_text)
@@ -82,8 +84,7 @@ def task8():
     def reverse_key_value(**kwargs):
         reversed_dict = {}
 
-        for item in kwargs.items():
-            key, value = item
+        for key, value in kwargs.items():
             reversed_dict[value] = key
 
         return reversed_dict
@@ -91,9 +92,7 @@ def task8():
     with open("./output.json", "w", encoding="utf-8") as file:
         new_dict = reverse_key_value(klucz1="wartość1", klucz2="wartość2", klucz3="wartość3")
 
-        dict_json = json.dumps(new_dict, indent=4, ensure_ascii=False)
-
-        file.write(dict_json)
+        json.dump(new_dict, file, indent=4, ensure_ascii=False)
 
 
 def task9():
@@ -105,7 +104,7 @@ def task9():
     print("-------------------------------------------------- --------------------  ------  ------")
 
     with open("./data.json", "r") as file:
-        packets = json.loads(file.read())["imdata"]
+        packets = json.load(file)["imdata"]
 
     for packet in packets:
         attributes = packet["l1PhysIf"]["attributes"]
@@ -125,4 +124,4 @@ def task9():
 
 
 if __name__ == "__main__":
-    task9()
+    task8()

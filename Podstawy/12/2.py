@@ -54,8 +54,6 @@ class Vehicle:
         self.number = number
         self.depot = depot.name
 
-        depot.add(self)
-
     def __str__(self):
         info = [
             f"Numer: {self.number}",
@@ -96,6 +94,10 @@ def main():
     autobus = Bus(200, 111, zajezdnia_autobusowa, 1000)
     tramwaj1 = Tram(240, 23, zajezdnia_tramwajowa, 3)
     tramwaj2 = Tram(220, 24, zajezdnia_tramwajowa, 1)
+
+    zajezdnia_autobusowa.add(autobus)
+    zajezdnia_tramwajowa.add(tramwaj1)
+    zajezdnia_tramwajowa.add(tramwaj2)
 
     print(zajezdnia_autobusowa)
     print(zajezdnia_tramwajowa)

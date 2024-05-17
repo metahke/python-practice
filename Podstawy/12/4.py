@@ -74,19 +74,17 @@ class SubManager:
 
     def show(self):
         print("---\nZapisane:")
-        for i in range(len(self.items)):
-            print(f"{i + 1}. {self.items[i]}")
+        for i, item in enumerate(self.items):
+            print(f"{i + 1}. {item}")
         print("---")
 
 
 class NotesSubManager(SubManager):
-    def __init__(self):
-        super().__init__()
+    pass
 
 
 class CardsSubManager(SubManager):
-    def __init__(self):
-        super().__init__()
+    pass
 
 
 def main():
