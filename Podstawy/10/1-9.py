@@ -25,12 +25,10 @@ def task3():
         lines = file.readlines()
 
         # Parzyste linijki będą nieparzystymi indeksami na liście
-        print(lines[1::2])
-        """ poprzednie rozwiązanie :| :
+        # Można również przy pomocy slicingu
         for i, line in enumerate(lines):
             if i % 2 != 0:
                 print(line)
-        """
 
 
 def task4():
@@ -124,4 +122,4 @@ def task9():
 
 
 if __name__ == "__main__":
-    task8()
+    task3()
