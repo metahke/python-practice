@@ -20,7 +20,7 @@ def task13():
                 word = input("Wpisz słowo: ")
                 description = input("Wpisz definicję: ")
                 dictionary[word] = description
-                print("--- Słowo i definicja zostały dodane ---",)
+                print("--- Słowo i definicja zostały dodane ---", )
 
             case "2":
                 word = input("Wprowadź poszukiwane słowo: ")
