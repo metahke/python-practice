@@ -14,7 +14,8 @@ def task1():
 
 
 def task2():
-    albums = {'The Sensual World': 'Kate Bush', 'Shaday': 'Ofra Haza', 'Achtung Baby': 'U2', 'Aion': 'Dead Can Dance', 'Invisible Touch': 'Genesis'}
+    albums = {'The Sensual World': 'Kate Bush', 'Shaday': 'Ofra Haza', 'Achtung Baby': 'U2', 'Aion': 'Dead Can Dance',
+              'Invisible Touch': 'Genesis'}
 
     def menu():
         options = [
@@ -131,7 +132,7 @@ def task5():
 
 def task6():
     answer = "Kluczami w słowniku mogą być jedynie elementy, które są 'immutable', czyli niezmienne, stałe. Dlatego też kluczem w słowniku nie może być inny słownik lub lista."
-    
+
     print(answer)
 
 
