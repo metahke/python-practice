@@ -8,7 +8,7 @@ def task1():
 def task2():
     to_sort = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
 
-    to_sort.sort(key=lambda index: index[1])
+    to_sort.sort(key=lambda item: item[1])
 
 
 def task3():
@@ -36,7 +36,7 @@ def task5():
     nums2 = [4, 5, 6]
     nums3 = [7, 8, 9]
 
-    print(functools.reduce(lambda num1, num2: num1 + num2, nums1 + nums2 + nums3))
+    print(functools.reduce(lambda sum, num: sum + num, nums1 + nums2 + nums3))
 
 
 def task6():
@@ -62,9 +62,17 @@ def task8():
         ["88112", "Einführung in Python3, Bernd Klein", 3, 24.99]
     ]
 
-    # Wolałbym użyć destrukturyzacji na liście order, ale nie wiem jak to zrobić w lambdzie
+    def calc_invoice_part(order: list) -> tuple:
+        id, name, amount, price = order
+        whole_price = round(amount * price, 2)
+
+        if whole_price < 100:
+            whole_price += 10
+
+        return id, whole_price
+
     invoice = list(map(
-        lambda order: (order[0], order[2] * order[3]), orders
+        lambda order: calc_invoice_part(order), orders
     ))
 
     print(invoice)

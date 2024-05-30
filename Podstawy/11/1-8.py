@@ -101,7 +101,7 @@ def task4():
 
 
 def task5():
-    values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+    values = ["2", "3", "4", "5", "_6", "7", "8", "9", "10", "J", "Q", "K", "A"]
     figures = ["Hearts", "Spades", "Clubs", "Diamonds"]
     cards = []
 

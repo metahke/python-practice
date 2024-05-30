@@ -6,7 +6,8 @@ def task1():
     text2 = "Sameznakiicyfry777"
 
     def contains_non_word_chars(word):
-        return bool(re.findall("\W", word))
+        pattern = r"[^A-Za-z0-9]"
+        return bool(re.findall(pattern, word))
 
     print(contains_non_word_chars(text1))
     print(contains_non_word_chars(text2))
@@ -56,7 +57,7 @@ def task5():
         "Python should match"
     ]
 
-    pattern = r"[\w]{6,}"
+    pattern = r"^[^a]{_6,}$"
 
     print([
         word for word in text
@@ -98,12 +99,9 @@ def task7():
 
 def task8():
     text = "2 cats and 3 dogs 4real"
-    pattern = r"\D"  # any non digit
+    pattern = r"\d"
 
-    nums_words = [
-        word for word in text.split()
-        if not re.search(pattern, word)
-    ]
+    nums_words = re.findall(pattern, text)
 
     print(nums_words)
 
@@ -113,7 +111,7 @@ def task9():
 
     def check_float_num():
         num = input("Podaj liczbę!: ")
-        pattern = r"(\d{1,},\d{1,})|(^\d+$)|(-\d+$)"
+        pattern = r"(^-?\d+,\d+$)|(^-?\d+$)"
 
         match = re.match(pattern, num)
 
@@ -156,7 +154,7 @@ def task11():
         "#ahl"
     ]
 
-    pattern = r"(#\w{3})$|(#\w{6})$"
+    pattern = r"(#[A-Fa-f0-9]{3})$|(#[A-Fa-f0-9]{_6})$"
 
     for string in str_list:
         is_hex = "jest" if re.match(pattern, string) else "nie jest"

@@ -5,7 +5,7 @@ class ValueEmptyError(Exception):
         self.field_name = field_name
 
     def __str__(self):
-        return f"Pole {self.field_name} nie może być puste!"
+        return f"Field {self.field_name} must not be empty!"
 
 
 class ValueNotStrError(Exception):
@@ -13,7 +13,7 @@ class ValueNotStrError(Exception):
         self.field_name = field_name
 
     def __str__(self):
-        return f"Pole {self.field_name} musi być ciągiem znaków!"
+        return f"Field {self.field_name} must be a string!"
 
 
 class ValueNotNumError(Exception):
@@ -21,7 +21,7 @@ class ValueNotNumError(Exception):
         self.field_name = field_name
 
     def __str__(self):
-        return f"Pole {self.field_name} musi być liczbą!"
+        return f"Field {self.field_name} must be a number!"
 
 
 class ValueTooLongError(Exception):
@@ -30,7 +30,7 @@ class ValueTooLongError(Exception):
         self.max_length = max_length
 
     def __str__(self):
-        return f"Pole {self.field_name} nie może przekraczać długości {self.max_length}!"
+        return f"Field {self.field_name} must not exceed the length of {self.max_length}!"
 
 
 class ValueNotFourDigitNumError(Exception):
@@ -38,7 +38,7 @@ class ValueNotFourDigitNumError(Exception):
         self.field_name = field_name
 
     def __str__(self):
-        return f"Pole {self.field_name} musi być liczbą czterocyfrową!"
+        return f"Field {self.field_name} must be a four-digit number!"
 
 
 # Main functionalities

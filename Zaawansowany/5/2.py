@@ -62,9 +62,10 @@ def printUpperFile(fileName):
 
 
 def main():
-    example1()
+    # example1()
     L = [10, 3, 5, 6, 9, 3]
 
+    # example2(1234)
     example2(L)
     example2([10, 3, 5, 6, "NA", 3])
 
