@@ -66,10 +66,10 @@ def task6():
     # b) [1, 5, 7]
     print(a[1:4])  # Pokaże elementy zaczynające się od indeksu pierwszego i kończące się na indeksie trzecim.
 
-    # c) [7, 9, 2, _6]
+    # c) [7, 9, 2, 6]
     print(a[3:])  # Pokaże elementy zaczynające się od indeksu trzeciego do samego końca listy.
 
-    # d) [9, 2, _6]
+    # d) [9, 2, 6]
     print(a[-3:])  # Pokaże elementy zaczynające się od indeksu -3 do samego końca listy.
 
     # e) [3, 1, 5]
@@ -78,7 +78,7 @@ def task6():
     # f) [7, 9, 2]
     print(a[3:-1])  # Pokaże elementy od indeksu 3 do przedostatniego.
 
-    # g) [3, 5, 9, _6]
+    # g) [3, 5, 9, 6]
     print(a[::2])  # Pokaże co drugi element od indeksu 0 do samego końca listy.
 
     # h) [2, 9, 7]

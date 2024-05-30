@@ -57,7 +57,7 @@ def task5():
         "Python should match"
     ]
 
-    pattern = r"^[^a]{_6,}$"
+    pattern = r"^[^a]{6,}$"
 
     print([
         word for word in text
@@ -154,7 +154,7 @@ def task11():
         "#ahl"
     ]
 
-    pattern = r"(#[A-Fa-f0-9]{3})$|(#[A-Fa-f0-9]{_6})$"
+    pattern = r"(#[A-Fa-f0-9]{3})$|(#[A-Fa-f0-9]{6})$"
 
     for string in str_list:
         is_hex = "jest" if re.match(pattern, string) else "nie jest"
